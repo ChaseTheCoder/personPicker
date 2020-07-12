@@ -18,7 +18,7 @@ app.get('/', (req, res)=>{
     res.render('home');
 });
 
-app.use('/picker', nameController);
+app.use('/main', nameController);
 
 app.listen(7000, ()=>{
     console.log('Listening on port 7000');
