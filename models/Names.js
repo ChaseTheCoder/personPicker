@@ -1,9 +1,12 @@
 const mongoose = require('mongoose');
 
 const nameSchema = new mongoose.Schema({
-    name: [String],
+    name: {
+        type: String,
+        required: true,
+    }
 })
 
-const Name = mongoose.model("Name", nameSchema)
+const Names = mongoose.model("Names", nameSchema)
 
- module.exports = Name;
+module.exports = Names;

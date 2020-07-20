@@ -10,20 +10,24 @@
         <h1>Person Picker</h1>
     </header>
     <div class="container">
-        <input type="password" placeholder="Enter Student Name" name="psw" required>
-        <button type="submit">Add Student</button>
-        <label></label>
+        <form action="/main" method="POST">
+            <input type="text" placeholder="Enter Student Name" name="name">
+            <button type="submit">Add Student</button>
+        </form>
+        <a href="/main/edit">
+            <button>Edit Class</button>
+        </a>
     </div>
     <div>
         <h3>Student Chosen</h3>
         <ul>
-            <li>
-
-            </li>
+            <% names.forEach(function(name) { %> 
+            <li><%= name.name %></li>
+            <% }); %> 
         </ul>
     </div>
     <div>
-        <h3>Yet to be Chose</h3>
+        <h3>Yet to be Choose</h3>
         <ul>
             <li>
                 

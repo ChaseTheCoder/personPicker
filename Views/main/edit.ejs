@@ -3,25 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>personPicker</title>
+    <title>Edit class</title>
 </head>
 <body>
-    <header>
-        <h1>Person Picker</h1>
-    </header>
-    <div class="container">
-        <input type="new" placeholder="Enter Student Name" name="students" required>
-        <button type="submit">Add Student</button>
-        <label></label>
-    </div>
-    <div>
-        <h3>Students</h3>
-        <ul>
-            <% forEach(){ %>
-            <li>
-
-            </li>
-        </ul>
-    </div>
+    <h1>Edit Class</h1>
+    <ul>
+        <% names.forEach(function(name) { %> 
+        <li><%= name.name %></li>
+        <% }); %> 
+    </ul>
 </body>
 </html>
