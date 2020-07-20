@@ -13,12 +13,12 @@ router.get("/", (req, res)=>{
     })
 });
 
-router.post('/', (req, res) => {
+router.post('/edit', (req, res) => {
     console.log(req.body);
     db.Names.create(req.body, (err, newNames)=> {
         if (err) return console.log(err);
 
-        res.redirect('/main');
+        res.redirect('/edit');
     });
 });
 
@@ -31,6 +31,13 @@ router.get("/edit", (req, res)=>{
             names: allNames,
         });
     })
+});
+
+router.delete('/edit', (req, res) => {
+    db.Names.findByIdAndDelete(req.params.id, (err, deletedFruit) => {
+        if (err) return console.log(err);
+        res.redirect('/edit');
+    });
 });
 
 
